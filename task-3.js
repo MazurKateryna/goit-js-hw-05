@@ -20,18 +20,13 @@ class Storage {
     return this.items.push(item);
   }
 
-  removeItem (item) {
-      
-      for (let i = 0; i < this.items.length; i += 1) {
-          const item = this.items[i];
-          if(item) {
-            this.items.splice(item, 1);
-          }
-          return this.items;
-      }  
+  removeItem(item) {
+    let index = this.items.indexOf(item);
+    if (index > -1) {
+      return this.items.splice(index, 1);
+    }
   }
 };
-
 
 const storage = new Storage([
   'Нанитоиды',
